@@ -8,7 +8,7 @@ Maintainer: Alexios Galanos <alexios@4dscape.com>
 Depends: R (>= 3.0.2), methods, rugarch (>= 1.4-7), parallel, nlshrink
 LinkingTo: Rcpp (>= 0.10.6), RcppArmadillo (>= 0.2.34)
 Imports: Rsolnp, MASS, Matrix, zoo, xts, Bessel, ff, shape, pcaPP, spd,
-        Rcpp, utils, graphics, stats, grDevices, corpcor
+        Rcpp, utils, graphics, stats, grDevices, corpcor, nlshrink
 Description: Feasible multivariate GARCH models including DCC, GO-GARCH and Copula-GARCH.
 Collate: rmgarch-extrafun.R rmgarch-var.R rmgarch-functions.R
         rmgarch-classes.R rmgarch-ica.R rmgarch-series.R
