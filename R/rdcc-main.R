@@ -512,7 +512,7 @@
 	estidx = as.logical( ipars[,4] )
 	npars = sum(estidx)
 	#-----------------------------------------------------------------------------------
-	Qbar = nlshrink::shrink_cov(stdresid)
+	Qbar = nlshrink::linshrink_cov(stdresid)
 	# Take care of the Asymmetry Matrices
 	if(modelinc[5]>0){
 		Ibar = .asymI(stdresid)
@@ -757,7 +757,7 @@
 	#-----------------------------------------------------------------------------------
 
 
-	Qbar = nlshrink:shrink_cov(stdresid[1:dcc.old, ])
+	Qbar = nlshrink:linshrink_cov(stdresid[1:dcc.old, ])
 	# Take care of the Asymmetry Matrices
 	if(modelinc[5]>0){
 		Ibar = .asymI(stdresid)
