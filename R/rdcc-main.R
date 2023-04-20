@@ -512,7 +512,7 @@
 	estidx = as.logical( ipars[,4] )
 	npars = sum(estidx)
 	#-----------------------------------------------------------------------------------
-	Qbar = cov(stdresid)
+	Qbar = nlshrink::shrink_cov(stdresid)
 	# Take care of the Asymmetry Matrices
 	if(modelinc[5]>0){
 		Ibar = .asymI(stdresid)
@@ -757,7 +757,7 @@
 	#-----------------------------------------------------------------------------------
 
 
-	Qbar = cov(stdresid[1:dcc.old, ])
+	Qbar = nlshrink:shrink_cov(stdresid[1:dcc.old, ])
 	# Take care of the Asymmetry Matrices
 	if(modelinc[5]>0){
 		Ibar = .asymI(stdresid)
@@ -964,7 +964,7 @@
 
 	f = lapply(forclist@forecast, function(x) sigma(x))
 	for(i in 1:n.roll){
-		xQbar = cov(stdresid[1:(T + i - 1), ])
+		xQbar = nlshrink::linshrink_cov(stdresid[1:(T + i - 1), ])
 		if(modelinc[5]>0) xNbar = cov(astdresid[1:(T + i - 1), ]) else xNbar = matrix(0, m, m)
 		xstdresids = stdresid[(T - mo + i ):(T  +  i - 1), , drop = FALSE]
 		xastdresids = astdresid[(T - mo + i ):(T  +  i - 1), , drop = FALSE]
